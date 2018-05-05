@@ -3,6 +3,7 @@ require("dotenv").config();
 let Twitter = require("twitter");
 let Spotify = require('node-spotify-api');
 let keys = require("./keys");
+let fs = require('fs');
 
 let spotify = new Spotify(keys.spotify);
 let client = new Twitter(keys.twitter);
@@ -14,7 +15,6 @@ let getTweets = function() {
           for(let i = 0; i < tweets.length; i++){
             console.log(tweets[i].text);
           }  
-           // console.log(tweets);
         }
     });
 }
